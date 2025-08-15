@@ -1,14 +1,10 @@
 'use client';
 
 import { FaTwitter, FaFacebookF, FaInstagram, FaDribbble, FaBehance } from "react-icons/fa";
-import { Montserrat } from 'next/font/google';
 import { Josefin_Sans } from 'next/font/google';
 import Image from "next/image";
 
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-});
+
 const josefinSans = Josefin_Sans({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'], // choose weights you need

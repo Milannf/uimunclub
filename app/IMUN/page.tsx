@@ -16,7 +16,7 @@ const montserrat = Montserrat({
   weight: ['400', '500', '700'],
 });
 
-export default function(){
+export default function IMUN(){
     return(
         <div className="text-white overflow-x-hidden overflow-y-hidden">
       
@@ -40,7 +40,7 @@ export default function(){
               Indonesia Model United Nations
             </h1>
 
-            <img
+            <Image
               src="/himunlogo.png"
               width={250}
               height={250}

@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Montserrat } from 'next/font/google';
-import { useState } from "react";
 import { FaTwitter, FaFacebookF, FaInstagram, FaDribbble, FaBehance } from "react-icons/fa";
 
 const montserrat = Montserrat({

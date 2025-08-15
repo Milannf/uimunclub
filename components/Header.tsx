@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Josefin_Sans, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Dropdown from "./Dropdown";
 import Dropdown2 from "./Dropdown2";
 import { FiMenu, FiX } from "react-icons/fi";

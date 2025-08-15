@@ -1,7 +1,7 @@
 'use client';
 
 import { Montserrat } from 'next/font/google';
-import { use, useState } from "react";
+import { useState } from "react";
 import Descriptions from "@/components/Descriptions";
 import Image from "next/image";
 import { FaTwitter, FaFacebookF, FaInstagram, FaDribbble, FaBehance } from "react-icons/fa";

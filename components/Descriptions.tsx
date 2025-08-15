@@ -1,5 +1,3 @@
-import { Children } from "react";
-
 
 type DescriptionsProps = {
   children: React.ReactNode;
