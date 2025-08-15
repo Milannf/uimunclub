@@ -11,7 +11,6 @@ const montserrat = Montserrat({
 });
 
 export default function Home() {
-  const [moveLeft, setMoveLeft] = useState(false);
 
   return (
     <div className="relative text-white">

@@ -1,9 +1,9 @@
 'use client';
 
-import Image from "next/image";
 import { Montserrat } from 'next/font/google';
 import { use, useState } from "react";
 import Descriptions from "@/components/Descriptions";
+import Image from "next/image";
 import { FaTwitter, FaFacebookF, FaInstagram, FaDribbble, FaBehance } from "react-icons/fa";
 
 const montserrat = Montserrat({
@@ -25,9 +25,10 @@ export default function Home() {
       <div className="relative h-screen flex flex-col items-center justify-center">
       {/* Fixed background image (works on iOS) */}
       <div className="fixed inset-0 -z-10">
-        <img
+        <Image
           src="/back.png"
           alt="background"
+          fill
           className="w-full h-full object-cover"
         />
         {/* Dark overlay */}
@@ -42,9 +43,11 @@ export default function Home() {
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-center">
           Model United Nations Club
         </h1>
-        <img
+        <Image
           src="/tagline.png"
           alt="tagline"
+          width={75}
+          height={75}
           className="w-[90px] h-[50px] md:w-[110px] md:h-[65px] lg:w-[125px] lg:h-[75px]"
         />
       </div>
@@ -72,7 +75,12 @@ export default function Home() {
                           transition-all duration-300 ${moveLeft ? "opacity-0 sm:opacity-100 md:opacity-100 md:-translate-x-87" : "opacity-100"}`}
               style={{ boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)' }}
             >
-              <img src={"/uimunclublogo.png"} className="w-[70%] h-[70%] object-contain" />
+              <Image 
+              src="/uimunclublogo.png"
+              alt='Logo'
+              width={50}
+              height={50}
+              className="w-[70%] h-[70%] object-contain" />
             </div>
 
             {/* Description */}

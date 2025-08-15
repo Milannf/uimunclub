@@ -1,11 +1,9 @@
 'use client';
 
 import { FaTwitter, FaFacebookF, FaInstagram, FaDribbble, FaBehance } from "react-icons/fa";
-import Image from "next/image";
 import { Montserrat } from 'next/font/google';
-import { use, useState } from "react";
-import Descriptions from "@/components/Descriptions";
 import { Josefin_Sans } from 'next/font/google';
+import Image from "next/image";
 
 const josefinSans = Josefin_Sans({
   subsets: ['latin'],
@@ -26,9 +24,10 @@ export default function(){
       <div className="relative h-screen flex flex-col items-center justify-center">
           {/* Fixed background image (iPhone-safe) */}
           <div className="fixed inset-0 -z-10">
-            <img
+            <Image
               src="/conference.png"
               alt="Conference background"
+              fill
               className="w-full h-full object-cover"
             />
             {/* Dark overlay */}

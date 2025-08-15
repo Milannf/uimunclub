@@ -1,11 +1,9 @@
 'use client';
 
-import Image from "next/image";
 import { FaTwitter, FaFacebookF, FaInstagram, FaDribbble, FaBehance } from "react-icons/fa";
 import { Montserrat } from 'next/font/google';
-import { use, useState } from "react";
-import Descriptions from "@/components/Descriptions";
 import { Josefin_Sans } from 'next/font/google';
+import Image from "next/image";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -16,17 +14,23 @@ const josefinSans = Josefin_Sans({
   weight: ['300', '400', '500', '600', '700'], // choose weights you need
 });
 
-export default function(){
+export default function HIMUNPage() {
     return(
         <div className="text-white overflow-x-hidden">
       
       {/* Section 1 */}
-      <div
-        className="relative h-screen flex flex-col items-center justify-center bg-center bg-cover"
-        style={{ backgroundImage: "url('/conference.png')" }}
-      >
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
+      <div className="relative h-screen flex flex-col items-center justify-center">
+        {/* Fixed Background */}
+        <div className="fixed inset-0 -z-10">
+          <Image
+            src="/conference.png"
+            alt="Conference background"
+            fill
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black opacity-80"></div>
+        </div>
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center">
@@ -34,12 +38,9 @@ export default function(){
             International Delegations
           </h1>
         </div>
-
-        
       </div>
 
       {/* Section 2 */}
-
         <div
         className="min-h-screen flex flex-col bg-white items-center justify-center bg-center bg-cover"
         >
@@ -49,9 +50,12 @@ export default function(){
                         w-[clamp(180px,30vw,280px)] 
                         [@media(min-width:900px)]:w-[clamp(150px,20vw,250px)] 
                         m-5 shadow-[0_10px_20px_rgba(0,0,0,0.1)] rounded-[25px] flex items-center justify-center">
-        <img src={'/uimunclublogo.png'}
-        width={150}
-        height={150}></img>
+        <Image 
+          src="/uimunclublogo.png"
+          width={150}
+          height={150}
+          alt="UI MUN Club Logo"
+        />
         </div>
         {/* Second pink box: rectangular, scales on mobile */}
         <div className="bg-white w-[80vw] max-w-[500px] m-5
@@ -73,9 +77,12 @@ export default function(){
                         w-[clamp(180px,30vw,280px)] 
                         [@media(min-width:900px)]:w-[clamp(150px,20vw,250px)] 
                         m-5 shadow-[0_10px_20px_rgba(0,0,0,0.1)] rounded-[25px] flex items-center justify-center">
-        <img src={'/uimunclublogo.png'}
-        width={150}
-        height={150}></img>
+        <Image 
+          src="/uimunclublogo.png"
+          width={150}
+          height={150}
+          alt="UI MUN Club Logo"
+        />
         </div>
         {/* Second pink box: rectangular, scales on mobile */}
         <div className="bg-white w-[80vw] max-w-[500px] m-5
@@ -96,9 +103,12 @@ export default function(){
                         w-[clamp(180px,30vw,280px)] 
                         [@media(min-width:900px)]:w-[clamp(150px,20vw,250px)] 
                         m-5 shadow-[0_10px_20px_rgba(0,0,0,0.1)] rounded-[25px] flex items-center justify-center">
-        <img src={'/uimunclublogo.png'}
-        width={150}
-        height={150}></img>
+        <Image 
+          src="/uimunclublogo.png"
+          width={150}
+          height={150}
+          alt="UI MUN Club Logo"
+        />
         </div>
         {/* Second pink box: rectangular, scales on mobile */}
         <div className="bg-white w-[80vw] max-w-[500px] m-5
@@ -155,3 +165,4 @@ export default function(){
     </div>
     )
 }
+

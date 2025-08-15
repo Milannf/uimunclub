@@ -1,11 +1,9 @@
 'use client';
 
 import { FaTwitter, FaFacebookF, FaInstagram, FaDribbble, FaBehance } from "react-icons/fa";
-import Image from "next/image";
 import { Montserrat } from 'next/font/google';
-import { use, useState } from "react";
-import Descriptions from "@/components/Descriptions";
 import { Josefin_Sans } from 'next/font/google';
+import Image from "next/image";
 
 const josefinSans = Josefin_Sans({
   subsets: ['latin'],
@@ -18,7 +16,7 @@ const montserrat = Montserrat({
   weight: ['400', '500', '700'],
 });
 
-export default function(){
+export default function HIMUN(){
     return(
         <div className="text-white overflow-x-hidden overflow-y-hidden">
       
@@ -26,9 +24,10 @@ export default function(){
       <div className="relative h-screen flex flex-col items-center justify-center">
       {/* Fixed background image (works on iPhone) */}
       <div className="fixed inset-0 -z-10">
-        <img
+        <Image
           src="/himun.png"
           alt="HIMUN Background"
+          fill
           className="w-full h-full object-cover"
         />
         {/* Dark overlay */}
@@ -41,7 +40,7 @@ export default function(){
           High School Model United Nations
         </h1>
 
-        <img
+        <Image
           src="/himunlogo.png"
           width={250}
           height={250}
@@ -52,8 +51,8 @@ export default function(){
         <h1
           className={`${josefinSans.className} text-xl sm:text-2xl md:text-3xl font-thin lg:text-4xl mt-5 text-center`}
         >
-          "The most prestigious High School-level
-          <br /> Model UN conference in Indonesia"
+          &quot;The most prestigious High School-level
+          <br /> Model UN conference in Indonesia&quot;
         </h1>
 
         <button
