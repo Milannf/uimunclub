@@ -2,21 +2,107 @@
 
 import { Montserrat } from 'next/font/google';
 import { useState } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Descriptions from "@/components/Descriptions";
 import Image from "next/image";
 import Footer from '@/components/Footer';
+import { motion } from "framer-motion";
+import Link from 'next/link';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['400', '500', '700'],
 });
 
+const programs = [
+  {
+    title: "Indonesia Model United Nations",
+    description: "This is a short introduction about Program 1. It gives students opportunities to grow and learn.",
+    image: "/danaukenangan.png",
+    alt: "program",
+    link: "/IMUN"
+  },
+  {
+    title: "High School Model United Nations",
+    description: "This is a short introduction about Program 2. It focuses on creativity and innovation.",
+    image: "/danaukenangan.png",
+    alt: "program",
+    link: "/HIMUN"
+  },
+  {
+    title: "General Training",
+    description: "This is a short introduction about Program 3. It emphasizes collaboration and teamwork.",
+    image: "/danaukenangan.png",
+    alt: "program",
+    link: "/GeneralTraining"
+  },
+  {
+    title: "UI for Harvard National MUN",
+    description: "This is a short introduction about Program 3. It emphasizes collaboration and teamwork.",
+    image: "/danaukenangan.png",
+    alt: "program",
+    link: "/InternationalDelegations"
+  },
+  {
+    title: "UI for Harvard World MUN",
+    description: "This is a short introduction about Program 3. It emphasizes collaboration and teamwork.",
+    image: "/danaukenangan.png",
+    alt: "program",
+    link: "/InternationalDelegations"
+  },
+  {
+    title: "UI for Singapore MUN",
+    description: "This is a short introduction about Program 3. It emphasizes collaboration and teamwork.",
+    image: "/danaukenangan.png",
+    alt: "program",
+    link: "/InternationalDelegations"
+  },
+  {
+    title: "UI for NTUMUN",
+    description: "This is a short introduction about Program 3. It emphasizes collaboration and teamwork.",
+    image: "/danaukenangan.png",
+    alt: "program",
+    link: "/InternationalDelegations"
+  },
+  {
+    title: "UI for TEIMUN",
+    description: "This is a short introduction about Program 3. It emphasizes collaboration and teamwork.",
+    image: "/danaukenangan.png",
+    alt: "program",
+    link: "/InternationalDelegations"
+  },
+  {
+    title: "UI for EUROMUN",
+    description: "This is a short introduction about Program 3. It emphasizes collaboration and teamwork.",
+    image: "/danaukenangan.png",
+    alt: "program",
+    link: "/InternationalDelegations"
+  },
+  {
+    title: "UI for PIMUN",
+    description: "This is a short introduction about Program 3. It emphasizes collaboration and teamwork.",
+    image: "/danaukenangan.png",
+    alt: "program",
+    link: "/InternationalDelegations"
+  },
+];
+
 export default function Home() {
-  const [moveLeft, setMoveLeft] = useState(false);
-  const [moveLeft2, setMoveLeft2] = useState(false);
-  const [moveLeft3, setMoveLeft3] = useState(false);
-  const [moveLeft4, setMoveLeft4] = useState(false);
-  const [moveLeft5, setMoveLeft5] = useState(false);
+  const [moveLeft, setMoveLeft] = useState(true);
+  const [moveLeft2, setMoveLeft2] = useState(true);
+  const [moveLeft3, setMoveLeft3] = useState(true);
+  const [moveLeft4, setMoveLeft4] = useState(true);
+  const [moveLeft5, setMoveLeft5] = useState(true);
+
+  const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === programs.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? programs.length - 1 : prev - 1));
+  };
 
   return (
     <div className="text-white overflow-x-hidden">
@@ -55,18 +141,22 @@ export default function Home() {
 
 
       {/* Section 2 */}
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-white bg-gradient-to-r from-[#feedb4]/50 via-white to-[#579cbc]/50
+">
         <div className="flex flex-col w-[80vw] items-center py-[1vh] gap-[1vh]">
 
-          <p
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 2, ease: "easeOut" }}
             className={`${montserrat.className} text-6xl font-bold text-black mt-[5vh] text-center`}
-            style={{ letterSpacing: '0.1em' }}
+            style={{ letterSpacing: "0.1em" }}
           >
-            WHO ARE WE
-          </p>
+            WHO ARE <br></br> WE
+          </motion.p>
 
           {/* Block 1 */}
-          <div className="relative mt-[15vh] mb-15">
+          <div className="relative mt-[12vh] md:mt-[6vh] sm:mt-[6vh] lg:mt-[8vh] mb-15 sm:mb-7 md:mb-7 lg:mb-7 ">
             {/* Logo */}
             <div
               onClick={() => setMoveLeft(!moveLeft)}
@@ -95,7 +185,7 @@ export default function Home() {
           </div>
 
           {/* Block 2 */}
-          <div className="relative mt-[10vh]">
+          <div className="relative mt-[6vh]">
             {/* Logo but reversed direction */}
             <div
               onClick={() => setMoveLeft2(!moveLeft2)}
@@ -136,8 +226,7 @@ export default function Home() {
               onClick={() => setMoveLeft3(false)}
               className={`absolute top-1/2 left-1/2 transition-all duration-300 transform
                           -translate-x-1/2 -translate-y-1/2
-                          ${moveLeft3 ? "opacity-100" : "md:translate-x-50 opacity-0 pointer-events-none"}`}
-            >
+                          ${moveLeft3 ? "opacity-100" : "md:translate-x-50 opacity-0 pointer-events-none"}`}>
               <Descriptions>Actively recruit and engage new members through inclusive and interactive programs, ensuring a strong foundation for future MUN enthusiasts and a smooth leadership transition for the next administration.</Descriptions>
             </div>
           </div>
@@ -189,9 +278,55 @@ export default function Home() {
               <Descriptions>Foster a stimulating and supportive environment where members can refine their public speaking, diplomacy, and leadership skills, keeping their passion for MUN alive and ensuring continuous personal growth.</Descriptions>
             </div>
           </div>
+
+
           
 
         </div>
+         <div className="w-full flex flex-col items-center py-12 bg-gray-50">
+      <h1 className="text-5xl text-black font-bold mb-8">Our Programs</h1>
+
+      <div className="relative max-w-full md:max-w-[600px] sm:max-w-[600px] mx-auto bg-white border-5 border-black rounded-2xl shadow-lg p-6 flex flex-col items-center">
+        {/* Text Box */}
+        <Link href={programs[current].link} className="text-center cursor-pointer hover:underline">
+          <h2 className="text-2xl text-black font-semibold mb-2
+            transition-transform duration-300 ease-in-out
+            group-hover:scale-105
+            group-hover:text-[#D8BA3A]
+            hover:underline">
+            {programs[current].title}
+          </h2>
+        </Link>
+        <p className="text-gray-700 text-center mb-4">
+          {programs[current].description}
+        </p>
+
+        {/* Image */}
+        <div className="w-full h-[300px] relative rounded-xl overflow-hidden">
+          <Image
+            src={programs[current].image}
+            alt={programs[current].alt}
+            fill
+            className="object-cover"
+          />
+        </div>
+
+  {/* Navigation Buttons */}
+  <button
+    onClick={prevSlide}
+    className="absolute bg-black left-[-40px] top-1/2 transform -translate-y-1/2 rounded-full shadow-md p-3 hover:bg-gray-500"
+  >
+    <FiChevronLeft size={24} />
+  </button>
+  <button
+    onClick={nextSlide}
+    className="absolute bg-black right-[-40px] top-1/2 transform -translate-y-1/2 rounded-full shadow-md p-3 hover:bg-gray-500"
+  >
+    <FiChevronRight size={24} />
+  </button>
+</div>
+
+    </div>
         <Footer></Footer>
       </div>
     </div>

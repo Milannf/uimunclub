@@ -93,31 +93,56 @@ export default function HIMUN(){
         </div>
         <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row items-center sm:items-start md:items-start lg:items-start justify-start lg:w-[1000px] md:w-[600px] sm:w-[600px] w-[400px] h-auto">
             <div className="justify-start flex flex-col w-[80vw] h-auto m-2">
-                <div className="flex flex-col border-5 border-black text-black mb-5">
+                <div className="flex flex-col items-center justify-center border-5 border-black text-black mb-5">
                     <h1 className={`${josefinSans.className} mt-5 text-3xl sm:text-4xl md:text-4xl text-black font-bold m-2 text-center `}>
                       Roadshow</h1>
+                    <Image
+                      src="/backgroundalumni.png"
+                      alt="backgroundalumni"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="w-[150px] sm:w-[200px] md:w-[250px] lg:w-[300px] h-auto hover:scale-105 hover:shadow-md transition-transform m-3"
+                    />
                     <h1 className={`${montserrat.className} text-[20px] sm:text-xl md:text-2xl m-5`}>H!MUN hosts annual roadshows to high schools from Bogor to North Jakarta, offering sessions like MUN 101, Mini MUN Simulations, and Tips & Tricks to help delegates prepare for conferences.</h1>
                 </div>
 
-                <div className="border-5 border-black text-black flex flex-col">
+                <div className="items-center border-5 border-black text-black flex flex-col">
                     <h1 className={`${josefinSans.className} mt-5 text-3xl sm:text-4xl md:text-4xl text-black font-bold m-2 text-center `}>
                       Pre-Event</h1>
+                      <Image
+                      src="/backgroundalumni.png"
+                      alt="backgroundalumni"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="w-[150px] sm:w-[200px] md:w-[250px] lg:w-[300px] h-auto hover:scale-105 hover:shadow-md transition-transform m-3"
+                    />
                     <h1 className={`${montserrat.className} text-[20px] sm:text-xl md:text-2xl m-5`}>Before the main-event, H!MUN hosts a Pre-Event for delegates to learn and engage with experts in each council. Our Pre-Event usually consists of an MUN 101 for crisis, press, conventional councils and unconventional councils.</h1>
                 </div>              
             </div>
             <div className="flex flex-col w-[80vw] h-auto">
-                <div className="mt-5 border-5 border-black flex flex-col ">
+                <div className="mt-5 border-5 border-black items-center flex flex-col ">
                     <h1 className={`${josefinSans.className} text-black mt-5 text-3xl sm:text-4xl md:text-4xl text-black font-bold m-2 text-center `}>
                       D-Day</h1>
+                      <Image
+                      src="/backgroundalumni.png"
+                      alt="backgroundalumni"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="w-[150px] sm:w-[200px] md:w-[250px] lg:w-[300px] h-auto hover:scale-105 hover:shadow-md transition-transform m-3"
+                    />
                     <h1 className={`${montserrat.className} m-5 text-black text-[20px] sm:text-xl md:text-2xl`}>D-Day is where preparation meets diplomacy. For H!MUN 2025, it spans two days and 9 to 11 hours of intense committee sessions. Young diplomats will debate, negotiate and draft solutions to global crises, testing their skills in persuasion, strategy and teamwork. From lobbying to amendments, every moment counts. By the end, delegates will produce resolutions born from collaboration and rigorous discussion, turning ideas into action on the ultimate Model United Nations stage.</h1>
+                    <div className="w-auto h-auto flex flex-col md:flex-row justify-center items-center m-5">
+                        <button className={`${josefinSans.className} text-1xl text-black bg-[#D8BA3A] rounded-[15px] m-3 hover:bg-[#c0a832] hover:shadow-lg hover:scale-105`}><h1 className="m-3">DOCUMENTATION</h1></button>
+                    </div>
                 </div>
             </div>
         </div>
 
         {/* Documentation */}
-        <div className="w-auto h-auto flex flex-col md:flex-row justify-center items-center mt-5">
-            <button className={`${josefinSans.className} font-bold text-1xl text-black bg-[#D8BA3A] rounded-[15px] m-2 hover:bg-[#c0a832] hover:shadow-lg hover:scale-105`}><h1 className="m-2">Documentation</h1></button>
-        </div>
+        
         
         <Footer></Footer>
     </div>

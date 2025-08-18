@@ -3,10 +3,9 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Montserrat } from "next/font/google";
-import Dropdown from "./Dropdown";
-import Dropdown2 from "./Dropdown2";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import Link from 'next/link';
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -23,7 +22,7 @@ export default function Header() {
 
   const dropdownRef1 = useRef<HTMLDivElement | null>(null);
   const dropdownRef2 = useRef<HTMLDivElement | null>(null);
-  const mobileHeaderRef = useRef<HTMLDivElement | null>(null); // ✅ changed name
+  const mobileHeaderRef = useRef<HTMLDivElement | null>(null);
 
   const menuItems = [
     {
@@ -57,32 +56,37 @@ export default function Header() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrollDir(currentScrollY > lastScrollY ? "down" : "up");
-      setLastScrollY(currentScrollY);
-    };
+      const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        setScrollDir(currentScrollY > lastScrollY ? "down" : "up");
+        setLastScrollY(currentScrollY);
 
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef1.current && !dropdownRef1.current.contains(event.target as Node)) {
         setShowDropdown(false);
-      }
-      if (dropdownRef2.current && !dropdownRef2.current.contains(event.target as Node)) {
         setShowDropdown2(false);
-      }
-      if (mobileHeaderRef.current && !mobileHeaderRef.current.contains(event.target as Node)) {
-        setMobileMenuOpen(false);
-      }
-    };
+        setOpenIndex(null);
+      };
 
-    window.addEventListener("scroll", handleScroll);
-    document.addEventListener("mousedown", handleClickOutside);
+      const handleClickOutside = (event: MouseEvent) => {
+        if (dropdownRef1.current && !dropdownRef1.current.contains(event.target as Node)) {
+          setShowDropdown(false);
+        }
+        if (dropdownRef2.current && !dropdownRef2.current.contains(event.target as Node)) {
+          setShowDropdown2(false);
+        }
+        if (mobileHeaderRef.current && !mobileHeaderRef.current.contains(event.target as Node)) {
+          setMobileMenuOpen(false);
+        }
+      };
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [lastScrollY]);
+      window.addEventListener("scroll", handleScroll);
+      document.addEventListener("mousedown", handleClickOutside);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [lastScrollY]);
+
 
   const buttonClass = `${montserrat.className} font-bold bg-[#3685AA] text-white h-[5vh] w-[23vh] p-5 mr-10 rounded-[15px] flex items-center justify-center transition-all duration-300 hover:bg-[#2b6c8a] hover:scale-102 hover:shadow-lg`;
 
@@ -90,10 +94,8 @@ export default function Header() {
     <>
       {/* DESKTOP HEADER */}
       <div
-        className={`hidden md:flex opacity-100 bg-white h-[12vh] w-[95vw] rounded-3xl fixed top-5 left-1/2 -translate-x-1/2 z-50 shadow-md transition-transform duration-300 ${
-          scrollDir === "down"
-            ? "-translate-y-[calc(12vh+1.25rem)]"
-            : "translate-y-0"
+        className={`hidden md:flex opacity-100 h-[12vh] w-[95vw] rounded-3xl fixed top-5 left-1/2 -translate-x-1/2 z-50 shadow-md transition-transform duration-300 ${
+          scrollDir === "down" ? "-translate-y-[calc(12vh+1.25rem)]" : "translate-y-0"
         }`}
       >
         <div className="h-full w-1/4 flex justify-start items-center">
@@ -118,10 +120,27 @@ export default function Header() {
             >
               ABOUT US
             </button>
-
             {showDropdown && (
-              <div className="-z-50 absolute right-1 top-0 w-[168px] transition-all duration-300">
-                <Dropdown />
+              <div className="absolute left-0 top-0 -z-50 bg-white border rounded-[15px] shadow-lg p-4 w-full min-h-[5vh]">
+                <ul className="text-black font-bold text-[20px] justify-center text-center">
+                  <p className="text-white">hide</p>
+
+                  <li className="py-1 hover:text-blue-500 cursor-pointer">
+                    <Link href="/">Home</Link>
+                  </li>
+
+                  <hr className="border-t-3 border-gray-300 w-full"/>
+                  
+                  <li className="py-1 hover:text-blue-500 cursor-pointer">
+                    <Link href="/Secretariat">Secretariat</Link>
+                  </li>
+
+                  <hr className="border-t-3 border-gray-300 w-full"/>
+
+                  <li className="py-1 hover:text-blue-500 cursor-pointer">
+                    <Link href="/Alumnis">Alumnis</Link>
+                  </li>
+                </ul>
               </div>
             )}
           </div>
@@ -139,11 +158,27 @@ export default function Header() {
             </button>
 
             {showDropdown2 && (
-              <div className="-z-50 absolute right-1 top-0 w-[168px] transition-all duration-300">
-                <Dropdown2 />
+              <div className="absolute left-0 top-0 -z-50 bg-white border rounded-[15px] shadow-lg p-4 w-full min-h-[5vh]">
+                <ul className="text-black font-bold text-[20px] justify-center text-center">
+                  <p className="text-white">hide</p>
+                  <li className="py-1 hover:text-blue-500 cursor-pointer">
+                    <Link href="/IMUN">Indonesia Model United Nations</Link>
+                  </li>
+                  <hr className="border-t-3 border-gray-300 w-full"/>
+                  <li className="py-1 hover:text-blue-500 cursor-pointer">
+                    <Link href="/HIMUN">High School Model United Nations</Link>
+                  </li>
+                  <hr className="border-t-3 border-gray-300 w-full"/>
+                  <li className="py-1 hover:text-blue-500 cursor-pointer">
+                    <Link href="/InternationalDelegations">International Delegations</Link>
+                  </li>
+                  <hr className="border-t-3 border-gray-300 w-full"/>
+                  <li className="py-1 hover:text-blue-500 cursor-pointer">General Training</li>
+                </ul>
               </div>
             )}
           </div>
+
 
           {/* CONTACT US */}
           <button className={buttonClass}>CONTACT</button>
@@ -151,7 +186,10 @@ export default function Header() {
       </div>
 
       {/* MOBILE HEADER */}
-      <div ref={mobileHeaderRef} className="md:hidden fixed top-0 left-0 w-full bg-white shadow-md z-50">
+      <div
+        ref={mobileHeaderRef}
+        className="md:hidden fixed top-0 left-0 w-full bg-white shadow-md z-50"
+      >
         <div className="flex justify-between items-center p-4">
           {/* Logo */}
           <Image
@@ -160,7 +198,6 @@ export default function Header() {
             width={40}
             height={40}
           />
-
           {/* Hamburger Icon */}
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? (
@@ -179,7 +216,10 @@ export default function Header() {
         >
           <div className="p-4">
             {menuItems.map((item, index) => (
-              <div key={index} className="mb-3 bg-white rounded-lg overflow-hidden border">
+              <div
+                key={index}
+                className="mb-3 bg-white rounded-lg overflow-hidden border"
+              >
                 <button
                   onClick={() => toggleIndex(index)}
                   className="w-full flex justify-between items-center px-4 py-3 bg-[#D8BA3A] text-white font-bold text-lg"
