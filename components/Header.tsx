@@ -38,7 +38,7 @@ export default function Header() {
       options: [
         { label: "High School Model United Nations", link: "/HIMUN" },
         { label: "Indonesia Model United Nations", link: "/IMUN" },
-        { label: "General Training", link: "#" },
+        { label: "General Training", link: "/GeneralTraining" },
         { label: "International Delegations", link: "/InternationalDelegations" },
       ],
     },
@@ -173,7 +173,10 @@ export default function Header() {
                     <Link href="/InternationalDelegations">International Delegations</Link>
                   </li>
                   <hr className="border-t-3 border-gray-300 w-full"/>
-                  <li className="py-1 hover:text-blue-500 cursor-pointer">General Training</li>
+                  <li className="py-1 hover:text-blue-500 cursor-pointer">
+                    <Link href="/GeneralTraining">General Training</Link>
+                  </li>
+                    
                 </ul>
               </div>
             )}

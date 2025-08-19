@@ -285,7 +285,6 @@ export default function Home() {
         </div>
          <div className="w-full flex flex-col items-center py-12 bg-gray-50">
       <h1 className="text-5xl text-black font-bold mb-8">Our Programs</h1>
-
       <div className="relative max-w-full md:max-w-[600px] sm:max-w-[600px] mx-auto bg-white border-5 border-black rounded-2xl shadow-lg p-6 flex flex-col items-center">
         {/* Text Box */}
         <Link href={programs[current].link} className="text-center cursor-pointer hover:underline">
@@ -314,15 +313,15 @@ export default function Home() {
   {/* Navigation Buttons */}
   <button
     onClick={prevSlide}
-    className="absolute bg-black left-[-40px] top-1/2 transform -translate-y-1/2 rounded-full shadow-md p-3 hover:bg-gray-500"
+    className="absolute bg-black left-[-60px] top-1/2 transform -translate-y-1/2 rounded-full shadow-md p-3 hover:bg-gray-500"
   >
     <FiChevronLeft size={24} />
   </button>
   <button
     onClick={nextSlide}
-    className="absolute bg-black right-[-40px] top-1/2 transform -translate-y-1/2 rounded-full shadow-md p-3 hover:bg-gray-500"
+    className="absolute bg-black right-[-60px] top-1/2 transform -translate-y-1/2 rounded-full shadow-md p-3 hover:bg-gray-500"
   >
-    <FiChevronRight size={24} />
+      <FiChevronRight size={24} />
   </button>
 </div>
 
