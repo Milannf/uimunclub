@@ -161,8 +161,8 @@ export default function Home() {
             <div
               onClick={() => setMoveLeft(!moveLeft)}
               className={`bg-white aspect-square w-[clamp(120px,20vw,200px)] rounded-[25px]
-                          flex justify-center items-center border-3 hover:bg-gray-100 cursor-pointer
-                          transition-all duration-300 ${moveLeft ? "opacity-0 sm:opacity-100 md:opacity-100 md:-translate-x-95" : "opacity-100"}`}
+                              flex justify-center items-center border-3 hover:bg-gray-100 cursor-pointer
+                              transition-all duration-300 ${moveLeft ? "opacity-0 sm:opacity-100 md:opacity-100 md:-translate-x-95" : "opacity-100"}`}
               style={{ boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)' }}
             >
               <Image 
@@ -177,8 +177,8 @@ export default function Home() {
             <div
               onClick={() => setMoveLeft(false)}
               className={`absolute top-1/2 left-1/2 transition-all duration-300 transform
-                          -translate-x-1/2 -translate-y-1/2
-                          ${moveLeft ? "opacity-100" : "md:translate-x-100 lg:translate-x-100 opacity-0 pointer-events-none"}`}
+                              -translate-x-1/2 -translate-y-1/2
+                              ${moveLeft ? "opacity-100" : "md:translate-x-100 lg:translate-x-100 opacity-0 pointer-events-none"}`}
             >
               <Descriptions>Universitas Indonesia Model United Nations Club (UI MUN Club) is one of the leading MUN Communities in the Asia-Pacific which works on skills development of its member, including negotiation, research, drafting, as well as speeches in a diplomatic manner. Several annual programs that have been going on by this organization are General Training, Mentoring, International Delegation, High School Model United Nations, and also Grand General Assembly.</Descriptions>
             </div>
@@ -190,8 +190,8 @@ export default function Home() {
             <div
               onClick={() => setMoveLeft2(!moveLeft2)}
               className={`bg-white aspect-square w-[clamp(120px,20vw,200px)] rounded-[25px]
-                          flex justify-center items-center border-3 hover:bg-gray-100 cursor-pointer
-                          transition-all duration-300 ${moveLeft2 ? "opacity-0 sm:opacity-100 md:opacity-100 md:translate-x-95 lg:translate-x-95" : "opacity-100"}`}
+                              flex justify-center items-center border-3 hover:bg-gray-100 cursor-pointer
+                              transition-all duration-300 ${moveLeft2 ? "opacity-0 sm:opacity-100 md:opacity-100 md:translate-x-95 lg:translate-x-95" : "opacity-100"}`}
               style={{ boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)' }}
             >
               <h1 className={`${montserrat.className} items-center flex justify-center items-center font-bold text-black text-2xl sm:text-2xl md:text-3xl lg:text:4xl`} >VISION</h1>
@@ -201,8 +201,8 @@ export default function Home() {
             <div
               onClick={() => setMoveLeft2(false)}
               className={`absolute top-1/2 left-1/2 transition-all duration-300 transform
-                          -translate-x-1/2 -translate-y-1/2 
-                          ${moveLeft2 ? "opacity-100" : "md:-translate-x-170 lg:-translate-x-170 opacity-0 pointer-events-none"}`}
+                              -translate-x-1/2 -translate-y-1/2 
+                              ${moveLeft2 ? "opacity-100" : "md:-translate-x-170 lg:-translate-x-170 opacity-0 pointer-events-none"}`}
             >
               <Descriptions>To build a thriving and sustainable MUN community by continuously attracting new members, fostering skill development and passion, and expanding our impact through strong public engagement.</Descriptions>
             </div>
@@ -214,8 +214,8 @@ export default function Home() {
             <div
               onClick={() => setMoveLeft3(!moveLeft3)}
               className={`bg-white aspect-square w-[clamp(120px,20vw,200px)] rounded-[25px]
-                          flex justify-center items-center border-3 hover:bg-gray-100 cursor-pointer
-                          transition-all duration-300 ${moveLeft3 ? "opacity-0 sm:opacity-100 md:opacity-100 md:-translate-x-95" : "opacity-100"}`}
+                              flex justify-center items-center border-3 hover:bg-gray-100 cursor-pointer
+                              transition-all duration-300 ${moveLeft3 ? "opacity-0 sm:opacity-100 md:opacity-100 md:-translate-x-95" : "opacity-100"}`}
               style={{ boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)' }}
             >
               <h1 className={`${montserrat.className} items-center flex justify-center items-center font-bold text-black text-2xl sm:text-2xl md:text-3xl lg:text:4xl`} >MISSION</h1>
@@ -225,8 +225,8 @@ export default function Home() {
             <div
               onClick={() => setMoveLeft3(false)}
               className={`absolute top-1/2 left-1/2 transition-all duration-300 transform
-                          -translate-x-1/2 -translate-y-1/2
-                          ${moveLeft3 ? "opacity-100" : "md:translate-x-50 opacity-0 pointer-events-none"}`}>
+                              -translate-x-1/2 -translate-y-1/2
+                              ${moveLeft3 ? "opacity-100" : "md:translate-x-50 opacity-0 pointer-events-none"}`}>
               <Descriptions>Actively recruit and engage new members through inclusive and interactive programs, ensuring a strong foundation for future MUN enthusiasts and a smooth leadership transition for the next administration.</Descriptions>
             </div>
           </div>
@@ -237,8 +237,8 @@ export default function Home() {
             <div
               onClick={() => setMoveLeft4(!moveLeft4)}
               className={`bg-white aspect-square w-[clamp(120px,20vw,200px)] rounded-[25px]
-                          flex justify-center items-center border-3 hover:bg-gray-100 cursor-pointer
-                          transition-all duration-300 ${moveLeft4 ? "opacity-0 sm:opacity-100 md:opacity-100 md:translate-x-95" : "opacity-100"}`}
+                              flex justify-center items-center border-3 hover:bg-gray-100 cursor-pointer
+                              transition-all duration-300 ${moveLeft4 ? "opacity-0 sm:opacity-100 md:opacity-100 md:translate-x-95" : "opacity-100"}`}
               style={{ boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)' }}
             >
               <h1 className={`${montserrat.className} items-center flex justify-center items-center font-bold text-black text-2xl sm:text-2xl md:text-3xl lg:text:4xl`} >MISSION</h1>
@@ -248,8 +248,8 @@ export default function Home() {
             <div
               onClick={() => setMoveLeft4(false)}
               className={`absolute top-1/2 left-1/2 transition-all duration-300 transform
-                          -translate-x-1/2 -translate-y-1/2
-                          ${moveLeft4 ? "opacity-100" : "md:-translate-x-170 lg:-translate-x-170 opacity-0 pointer-events-none"}`}
+                              -translate-x-1/2 -translate-y-1/2
+                              ${moveLeft4 ? "opacity-100" : "md:-translate-x-170 lg:-translate-x-170 opacity-0 pointer-events-none"}`}
             >
               <Descriptions>Foster a stimulating and supportive environment where members can refine their public speaking, diplomacy, and leadership skills, keeping their passion for MUN alive and ensuring continuous personal growth.</Descriptions>
             </div>
@@ -261,8 +261,8 @@ export default function Home() {
             <div
               onClick={() => setMoveLeft5(!moveLeft5)}
               className={`bg-white aspect-square w-[clamp(120px,20vw,200px)] rounded-[25px]
-                          flex justify-center items-center border-3 hover:bg-gray-100 cursor-pointer
-                          transition-all duration-300 ${moveLeft5 ? "opacity-0 sm:opacity-100 md:opacity-100 md:-translate-x-95" : "opacity-100"}`}
+                              flex justify-center items-center border-3 hover:bg-gray-100 cursor-pointer
+                              transition-all duration-300 ${moveLeft5 ? "opacity-0 sm:opacity-100 md:opacity-100 md:-translate-x-95" : "opacity-100"}`}
               style={{ boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)' }}
             >
               <h1 className={`${montserrat.className} items-center flex justify-center items-center font-bold text-black text-2xl sm:text-2xl md:text-3xl lg:text:4xl`}>MISSION</h1>
@@ -272,8 +272,8 @@ export default function Home() {
             <div
               onClick={() => setMoveLeft5(false)}
               className={`absolute top-1/2 left-1/2 transition-all duration-300 transform
-                          -translate-x-1/2 -translate-y-1/2
-                          ${moveLeft5 ? "opacity-100" : "md:translate-x-50 opacity-0 pointer-events-none"}`}
+                              -translate-x-1/2 -translate-y-1/2
+                              ${moveLeft5 ? "opacity-100" : "md:translate-x-50 opacity-0 pointer-events-none"}`}
             >
               <Descriptions>Foster a stimulating and supportive environment where members can refine their public speaking, diplomacy, and leadership skills, keeping their passion for MUN alive and ensuring continuous personal growth.</Descriptions>
             </div>
@@ -283,51 +283,66 @@ export default function Home() {
           
 
         </div>
-         <div className="w-full flex flex-col items-center py-12 bg-gray-50">
-      <h1 className="text-5xl text-black font-bold mb-8">Our Programs</h1>
-      <div className="relative max-w-full md:max-w-[600px] sm:max-w-[600px] mx-auto bg-white border-5 border-black rounded-2xl shadow-lg p-6 flex flex-col items-center">
-        {/* Text Box */}
-        <Link href={programs[current].link} className="text-center cursor-pointer hover:underline">
-          <h2 className="text-2xl text-black font-semibold mb-2
-            transition-transform duration-300 ease-in-out
-            group-hover:scale-105
-            group-hover:text-[#D8BA3A]
-            hover:underline">
-            {programs[current].title}
-          </h2>
-        </Link>
-        <p className="text-gray-700 text-center mb-4">
-          {programs[current].description}
-        </p>
+          <div className="w-full flex flex-col items-center py-12 mb-15">
+            <div className="w-full flex flex-col items-center py-8 md:py-12 mb-10 md:mb-15">
+          <h1 className="text-4xl sm:text-5xl text-black font-bold mb-6 md:mb-8 text-center px-4">Our Programs</h1>
+          <div className="relative w-full max-w-sm sm:max-w-md md:max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center">
+            {/* Text Box */}
+            <Link href={programs[current].link} className="text-center cursor-pointer hover:underline">
+              <h2 className="text-xl sm:text-2xl text-black font-semibold mb-2
+                transition-transform duration-300 ease-in-out
+                group-hover:scale-105
+                group-hover:text-[#D8BA3A]
+                hover:underline">
+                {programs[current].title}
+              </h2>
+            </Link>
+            <p className="text-gray-700 text-sm sm:text-base text-center mb-4 px-2">
+              {programs[current].description}
+            </p>
 
-        {/* Image */}
-        <div className="w-full h-[300px] relative rounded-xl overflow-hidden">
-          <Image
-            src={programs[current].image}
-            alt={programs[current].alt}
-            fill
-            className="object-cover"
-          />
+            {/* Image */}
+            <div className="w-full h-[200px] sm:h-[300px] relative rounded-xl overflow-hidden">
+              <Image
+                src={programs[current].image}
+                alt={programs[current].alt}
+                fill
+                className="object-cover"
+              />
+            </div>
+            
+            {/* Navigation Buttons */}
+              <button
+                onClick={prevSlide}
+                className="absolute bg-black left-[-60px] top-1/2 transform -translate-y-1/2 rounded-full shadow-md p-3 hover:bg-gray-500 hidden md:block"
+              >
+                <FiChevronLeft size={24} color="#ffffff" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute bg-black right-[-60px] top-1/2 transform -translate-y-1/2 rounded-full shadow-md p-3 hover:bg-gray-500 hidden md:block"
+              >
+                <FiChevronRight size={24} color="#ffffff" />
+              </button>
+            </div>
+          </div>
+          <div className="flex justify-center space-x-4">
+              <button
+                onClick={prevSlide}
+                className="bg-black rounded-full shadow-md p-3 hover:bg-gray-500 md:hidden"
+              >
+                <FiChevronLeft size={24} color="#ffffff" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="bg-black rounded-full shadow-md p-3 hover:bg-gray-500 md:hidden"
+              >
+                <FiChevronRight size={24} color="#ffffff" />
+              </button>
+            </div>
+          </div>
+          <Footer></Footer>
         </div>
-
-  {/* Navigation Buttons */}
-  <button
-    onClick={prevSlide}
-    className="absolute bg-black left-[-60px] top-1/2 transform -translate-y-1/2 rounded-full shadow-md p-3 hover:bg-gray-500"
-  >
-    <FiChevronLeft size={24} />
-  </button>
-  <button
-    onClick={nextSlide}
-    className="absolute bg-black right-[-60px] top-1/2 transform -translate-y-1/2 rounded-full shadow-md p-3 hover:bg-gray-500"
-  >
-      <FiChevronRight size={24} />
-  </button>
-</div>
-
-    </div>
-        <Footer></Footer>
       </div>
-    </div>
   );
 }

@@ -1,9 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Montserrat } from 'next/font/google';
-import Image from 'next/image'; // Make sure this is imported
-
-// ... (rest of your imports)
+import Image from 'next/image';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -37,6 +35,11 @@ const TimelineContainer = styled.div`
     width: 2px;
     background-color: #adb5bd;
     transform: translateX(-50%);
+
+    @media (max-width: 768px) {
+      left: 10px; // Keep timeline line on the left
+      transform: translateX(0);
+    }
   }
 `;
 
@@ -55,6 +58,12 @@ const TimelineEvent = styled.div<TimelineEventProps>`
   transform: translateY(20px);
   animation: ${fadeIn} 0.6s ease-out forwards;
   animation-delay: ${props => props.$delay}s;
+
+  @media (max-width: 768px) {
+    flex-direction: column; // Stack elements on mobile
+    margin-bottom: 50px;
+    align-items: center; // Horizontally center the image and content block
+  }
 `;
 
 const TimelineDot = styled.div`
@@ -66,6 +75,12 @@ const TimelineDot = styled.div`
   background-color: #5ab1a7;
   border-radius: 50%;
   transform: translate(-50%, -50%);
+
+  @media (max-width: 768px) {
+    left: 10px; // Align dot with the new timeline line
+    top: 0; // Position dot at the top of the event
+    transform: translate(-50%, -100%);
+  }
 `;
 
 interface EventContentProps {
@@ -100,6 +115,17 @@ const EventContent = styled.div<EventContentProps>`
       border-right: 10px solid #f8f9fa;
     `}
   }
+
+  @media (max-width: 768px) {
+    width: 100%; // Full width on mobile
+    text-align: left;
+    margin-left: 20px; // Add space for the timeline line and dot
+    padding-left: 20px;
+
+    &::before {
+      display: none; // Hide the arrow on mobile for a cleaner look
+    }
+  }
 `;
 
 interface EventImageProps {
@@ -112,7 +138,16 @@ const TimelineImageWrapper = styled.div<EventImageProps>`
   order: ${props => (props.$isLeft ? -1 : 1)};
   margin-right: ${props => (props.$isLeft ? '80px' : '0')};
   margin-left: ${props => (props.$isLeft ? '0' : '80px')};
+
+  @media (max-width: 768px) {
+    width: 70%; // Full width on mobile
+    order: -1; // Image always comes first on mobile
+    margin: 0 0 20px 0; // Add margin to the bottom
+    display: flex; // Use flexbox to center image
+    justify-content: center;
+  }
 `;
+
 
 const EventDate = styled.span`
   font-size: 1.1em;
@@ -120,6 +155,10 @@ const EventDate = styled.span`
   color: #495057;
   display: block;
   margin-bottom: 5px;
+  
+  @media (max-width: 768px) {
+    width: 70%; // Full width on mobile
+  }
 `;
 
 const EventLocation = styled.span`
@@ -154,7 +193,7 @@ const TimelineItem: React.FC<TimelineItemProps & { isLeft: boolean; index: numbe
 }) => {
   return (
     <TimelineEvent $isLeft={isLeft} $delay={index * 0.2}>
-      {isLeft && imageSrc && (
+      {imageSrc && (
         <TimelineImageWrapper $isLeft={isLeft}>
           <Image src={imageSrc} alt={title} width={405} height={250} style={{ width: '100%', height: 'auto', borderRadius: '5px' }} />
         </TimelineImageWrapper>
@@ -164,11 +203,6 @@ const TimelineItem: React.FC<TimelineItemProps & { isLeft: boolean; index: numbe
         {location && <EventLocation>{location}</EventLocation>}
         <EventTitle>{title}</EventTitle>
       </EventContent>
-      {!isLeft && imageSrc && (
-        <TimelineImageWrapper $isLeft={isLeft}>
-          <Image src={imageSrc} alt={title} width={405} height={250} style={{ width: '100%', height: 'auto', borderRadius: '5px' }} />
-        </TimelineImageWrapper>
-      )}
       <TimelineDot />
     </TimelineEvent>
   );
@@ -177,19 +211,19 @@ const TimelineItem: React.FC<TimelineItemProps & { isLeft: boolean; index: numbe
 const ReplicatedTimeline: React.FC = () => {
   const timelineData: TimelineItemProps[] = [
     {
-      date: 'Week 1',
+      date: 'July',
       location: 'Online/Offline',
       title: 'General Introduction to Model United Nations',
       imageSrc: '/backgroundalumni.png',
     },
     {
-      date: 'Week 2',
+      date: 'August',
       location: 'Online/Offline',
       title: 'Speech, Negotiation, Diplomacy',
       imageSrc: '/backgroundalumni.png',
     },
     {
-      date: 'Week 3',
+      date: 'September',
       location: 'Online/Offline',
       title: 'International Taxation',
       imageSrc: '/backgroundalumni.png',
