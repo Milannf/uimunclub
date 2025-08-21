@@ -1,17 +1,11 @@
 'use client';
 
 import { Montserrat } from 'next/font/google';
-import { Josefin_Sans } from 'next/font/google';
 import Image from "next/image";
 import Footer from '@/components/Footer';
 import ReplicatedTimeline from '@/components/Timeline'; // Import the new component
 import 'styled-components'; // Ensure styled-components is available
 import { motion } from "framer-motion";
-
-const josefinSans = Josefin_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-});
 
 const montserrat = Montserrat({
   subsets: ['latin'],

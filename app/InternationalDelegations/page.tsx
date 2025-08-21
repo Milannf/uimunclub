@@ -1,15 +1,10 @@
 'use client';
 
-import { Josefin_Sans, Montserrat } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
-
-const josefinSans = Josefin_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'], // choose weights you need
-});
 
 const montserrat = Montserrat({
   subsets: ['latin'],

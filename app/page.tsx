@@ -57,15 +57,20 @@ const programs = [
     link: "/InternationalDelegations"
   },
 ];
+interface AnimatedCounterProps {
+  from: number;
+  to: number;
+  prefix?: string;
+  suffix?: string;
+}
 
 // Reusable animated counter component
-const AnimatedCounter = ({ from, to, duration, prefix = '', suffix = '' }) => {
+const AnimatedCounter = ({ from, to, prefix = '', suffix = '' }: AnimatedCounterProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
   
-  // Create a motion value for the number animation
   const springValue = useSpring(from, { damping: 100, stiffness: 100 });
-  const displayValue = useTransform(springValue, (latest) => Math.round(latest));
+  const displayValue = useTransform(springValue, (latest: number) => Math.round(latest));
 
   useEffect(() => {
     if (inView) {
@@ -322,7 +327,6 @@ export default function Home() {
               </div>
           </div>
 
-          {/* 2025 Achievements */}
           <div className="w-full flex flex-col items-center py-16 ">
             <h1 className={`${montserrat.className} font-bold text-black text-4xl sm:text-5xl mb-12 text-center px-4`}>
               2025 Achievements
@@ -348,19 +352,19 @@ export default function Home() {
                   <h1 className={`${josefinSans.className} font-bold text-black text-2xl sm:text-3xl mb-4`}>Indonesia Model United Nations</h1>
                   <div className="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-6 text-center">
                     <div className="flex flex-col items-center">
-                      <AnimatedCounter from={0} to={180} duration={1} suffix='+' />
+                      <AnimatedCounter from={0} to={180} suffix='+' />
                       <p className='text-gray-600 text-sm sm:text-base'>Delegates</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <AnimatedCounter from={0} to={140} duration={1.2} suffix='+' />
+                      <AnimatedCounter from={0} to={140} suffix='+' />
                       <p className='text-gray-600 text-sm sm:text-base'>Schools</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <AnimatedCounter from={0} to={15} duration={1.4} suffix='+' />
+                      <AnimatedCounter from={0} to={15} suffix='+' />
                       <p className='text-gray-600 text-sm sm:text-base'>Years</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <AnimatedCounter from={0} to={10} duration={1.6} />
+                      <AnimatedCounter from={0} to={10} />
                       <p className='text-gray-600 text-sm sm:text-base'>Councils</p>
                     </div>
                   </div>
@@ -386,19 +390,19 @@ export default function Home() {
                   <h1 className={`${josefinSans.className} font-bold text-black text-2xl sm:text-3xl mb-4`}>High School Model United Nations</h1>
                   <div className="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-6 text-center">
                     <div className="flex flex-col items-center">
-                      <AnimatedCounter from={0} to={340} duration={1} suffix='+' />
+                      <AnimatedCounter from={0} to={340} suffix='+' />
                       <p className='text-gray-600 text-sm sm:text-base'>Delegates</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <AnimatedCounter from={0} to={140} duration={1.2} suffix='+' />
+                      <AnimatedCounter from={0} to={140} suffix='+' />
                       <p className='text-gray-600 text-sm sm:text-base'>Schools</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <AnimatedCounter from={0} to={10} duration={1.4} suffix='+' />
+                      <AnimatedCounter from={0} to={10} suffix='+' />
                       <p className='text-gray-600 text-sm sm:text-base'>Years</p>
                     </div>
                     <div className="flex flex-col items-center">
-                      <AnimatedCounter from={0} to={10} duration={1.6} />
+                      <AnimatedCounter from={0} to={10} />
                       <p className='text-gray-600 text-sm sm:text-base'>Councils</p>
                     </div>
                   </div>
@@ -417,11 +421,11 @@ export default function Home() {
               <h1 className={`${josefinSans.className} font-bold text-black text-3xl md:text-4xl mb-6 text-center`}>International Delegations</h1>
               <div className="flex flex-wrap justify-center gap-8 md:gap-12">
                 <div className="flex flex-col items-center">
-                  <AnimatedCounter from={0} to={5} duration={1} suffix='+' />
+                  <AnimatedCounter from={0} to={5} suffix='+' />
                   <p className='text-gray-600 text-base md:text-lg'>Countries</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <AnimatedCounter from={0} to={15} duration={1.2} suffix='+' />
+                  <AnimatedCounter from={0} to={15} suffix='+' />
                   <p className='text-gray-600 text-base md:text-lg'>Awards</p>
                 </div>
               </div>
